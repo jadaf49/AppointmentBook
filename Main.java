@@ -8,9 +8,9 @@ public class Main
         for (int i=10;i<15;i++) schedule[1][i] = true;
         for (int i=30;i<45;i++) schedule[1][i] = true;
         for (int i=50;i<60;i++) schedule[1][i] = true;
-        a.printPeriod(2);
+        //a.printPeriod(2);
 
-        int test = a.findFreeBlock(2,15 );
+        int test = a.findFreeBlock(2,5 );
         System.out.println(test);
     }
 }
