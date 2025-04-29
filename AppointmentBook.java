@@ -24,7 +24,8 @@ public class AppointmentBook {
      * 1 <= duration <= 60
      */
     private void reserveBlock(int period, int startMinute, int duration) {
-        /* implementation not shown */ }
+        for (int i=startMinute;i<startMinute+duration;i++) schedule[period-1][i]=false;
+    }
 
     /**
      * Searches for the first block of duration free minutes during period, as
@@ -61,6 +62,15 @@ public class AppointmentBook {
      */
     public boolean makeAppointment(int startPeriod, int endPeriod, int duration)
     {
+     for (int i=startPeriod;i<=endPeriod;i++)
+     {
+        int freeBlock = findFreeBlock(i,duration);
+        if (freeBlock>-1)
+        {
+            reserveBlock(i,freeBlock,duration);
+            return true;
+        }
+     }   
      return false;
     }
 
